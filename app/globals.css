@@ -70,3 +70,20 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 99px;
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}

@@ -8,10 +8,11 @@ interface EditorPanelProps {
   equations: Equation[];
   addEquation: () => void;
   environment: EquationEnvironment; 
+  addCustomIdentifier: (identifier: string) => void;
 }
 
 const EditorPanel = (props: EditorPanelProps) => {
-  const { equations, addEquation, environment } = props;
+  const { equations, addEquation, environment, addCustomIdentifier } = props;
 
   return (
     <div className="h-full w-full p-4 flex flex-col gap-4">
@@ -23,7 +24,12 @@ const EditorPanel = (props: EditorPanelProps) => {
         </Button>
       </div>
       {equations.map((equation, index) => (
-        <EquationRow key={index} equation={equation} />
+        <EquationRow
+          key={index}
+          equation={equation}
+          addCustomIdentifier={addCustomIdentifier}
+          suggestions={Object.values(environment).flat()}
+        />
       ))}
     </div>
   )
