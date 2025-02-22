@@ -154,7 +154,7 @@ const AutocompleteInput = ({
               return (
                 <li
                   key={idx}
-                  className={cn("px-2 py-1 cursor-pointer hover:bg-gray-100", color)}
+                  className={cn("px-2 py-1 cursor-pointer hover:bg-gray-200", color)}
                   onClick={() => handleSuggestionClick(suggestion)}
                 >
                   {suggestion.code}
